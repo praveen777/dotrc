@@ -35,13 +35,14 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'andrewstuart/vim-kubernetes'
 " Initialize plugin system
 call plug#end()
 let vim_markdown_preview_github=1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
@@ -60,6 +61,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType python nmap <leader>ds <C-c>g
 
 let g:go_fmt_command = "goimports"
 
