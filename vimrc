@@ -62,7 +62,9 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
+let g:pymode_run_bind = "<C-S-e>"
 au FileType python nmap <leader>ds <C-c>g
+au FileType python nmap <leader>r <C-S-e>
 
 let g:go_fmt_command = "goimports"
 
