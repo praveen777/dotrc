@@ -37,6 +37,8 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'junegunn/goyo.vim'
+Plug 'mileszs/ack.vim'
+Plug 'terryma/vim-multiple-cursors'
 " Initialize plugin system
 call plug#end()
 let vim_markdown_preview_github=1
@@ -94,6 +96,9 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 map <c-o> :FZF<CR>
 map <c-r> :CtrlPMRUFiles<CR>
+map <leader>pp :setlocal paste!<cr>
+map <leader>z :Goyo<cr>
+map <leader>g :Ack 
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
