@@ -36,6 +36,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'andrewstuart/vim-kubernetes'
+Plug 'junegunn/goyo.vim'
 " Initialize plugin system
 call plug#end()
 let vim_markdown_preview_github=1
@@ -92,6 +93,7 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 map <c-o> :FZF<CR>
+map <c-r> :CtrlPMRUFiles<CR>
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
