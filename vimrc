@@ -11,7 +11,8 @@
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin()
-
+Plug 'YankRing.vim'
+Plug 'Raimondi/delimitMate'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'vim-airline/vim-airline'
@@ -107,12 +108,13 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
-set sw=2
-set ts=2
+set sw=4
+set ts=4
 
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
 
+nnoremap <silent> ,p :YRShow<CR>
 
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
