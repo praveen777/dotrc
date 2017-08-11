@@ -11,6 +11,7 @@
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin()
+Plug 'airblade/vim-gitgutter'
 Plug 'YankRing.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'junegunn/fzf.vim'
@@ -31,6 +32,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -100,6 +102,10 @@ map <c-r> :CtrlPMRUFiles<CR>
 map <leader>pp :setlocal paste!<cr>
 map <leader>z :Goyo<cr>
 map <leader>g :Ack 
+
+map <leader>/ <Plug>(incsearch-easymotion-/)
+map <leader>? <Plug>(incsearch-easymotion-?)
+map <leader>g/ <Plug>(incsearch-easymotion-stay)
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
