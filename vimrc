@@ -11,6 +11,7 @@
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin()
+Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'YankRing.vim'
 Plug 'Raimondi/delimitMate'
@@ -147,3 +148,5 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
+
+colorscheme molokai
