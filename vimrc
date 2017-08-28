@@ -11,6 +11,7 @@
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin()
+Plug 'kshenoy/vim-signature'
 Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'YankRing.vim'
