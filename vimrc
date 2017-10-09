@@ -5,7 +5,7 @@
 "cd fontd
 "./install.sh
 
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/0.8.0/plug.vim
 
 "Markdown plug deps : https://github.com/joeyespo/grip  
 
@@ -31,7 +31,7 @@ Plug 'python-mode/python-mode'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/DrawIt'
-Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
@@ -76,6 +76,10 @@ au FileType python nmap <leader>ds <C-c>g
 au FileType python nmap <leader>r <C-S-e>
 
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = 'guru'
+let g:go_auto_type_info = 1
+set updatetime=100
+let g:go_auto_sameids = 1
 
 set hlsearch
 
@@ -151,3 +155,5 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \ })<CR>
 
 colorscheme molokai
+
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
