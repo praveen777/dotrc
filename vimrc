@@ -44,6 +44,7 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'junegunn/goyo.vim'
 Plug 'mileszs/ack.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-ruby/vim-ruby'
 " Initialize plugin system
 call plug#end()
 let vim_markdown_preview_github=1
