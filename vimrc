@@ -11,6 +11,7 @@
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin()
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
@@ -24,17 +25,20 @@ Plug 'leshill/vim-json'
 Plug 'tomtom/tcomment_vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'SirVer/ultisnips'
+Plug 'avakhov/vim-yaml'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'python-mode/python-mode'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-syntastic/syntastic'
+"Plug 'w0rp/ale'
 Plug 'vim-scripts/DrawIt'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -114,6 +118,12 @@ map <leader>g :Ack
 map <leader>/ <Plug>(incsearch-easymotion-/)
 map <leader>? <Plug>(incsearch-easymotion-?)
 map <leader>g/ <Plug>(incsearch-easymotion-stay)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
+map <leader>n <Plug>(easymotion-next)
+map <leader>N <Plug>(easymotion-prev)
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -135,7 +145,8 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 let g:slime_target = "tmux"
-
+let g:slime_paste_file = tempname()
+let g:slime_python_ipython = 1
 
 function! s:buflist()
   redir => ls
@@ -158,3 +169,16 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 colorscheme molokai
 
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
+
+function! s:config_easyfuzzymotion(...) abort
+	  return extend(copy({
+	    \   'converters': [incsearch#config#fuzzyword#converter()],
+	    \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+	    \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+	    \   'is_expr': 0,
+	    \   'is_stay': 1
+	    \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
