@@ -32,6 +32,7 @@ Plug 'fatih/vim-go'
 Plug 'python-mode/python-mode'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-syntastic/syntastic'
+Plug 'james9909/stackanswers.vim'
 "Plug 'w0rp/ale'
 Plug 'vim-scripts/DrawIt'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
