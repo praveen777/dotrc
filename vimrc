@@ -13,7 +13,7 @@
 call plug#begin()
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'tomasr/molokai'
+Plug 'fatih/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'YankRing.vim'
 Plug 'Raimondi/delimitMate'
@@ -33,7 +33,6 @@ Plug 'python-mode/python-mode'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-syntastic/syntastic'
 Plug 'james9909/stackanswers.vim'
-"Plug 'w0rp/ale'
 Plug 'vim-scripts/DrawIt'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
 Plug 'tpope/vim-fugitive'
@@ -183,3 +182,12 @@ function! s:config_easyfuzzymotion(...) abort
 endfunction
 
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
+
+
+
+set timeout timeoutlen=1000 ttimeoutlen=10
+"let g:pymode_rope = 0
+let g:go_version_warning = 0
+let g:rehash256 = 1
+let g:molokai_original = 1
