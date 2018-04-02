@@ -42,6 +42,7 @@ brew "kubernetes-cli", link: false
 brew "kubernetes-helm"
 brew "lastpass-cli"
 brew "libxmlsec1"
+brew "mas"
 brew "mercurial"
 brew "mysql", restart_service: true
 brew "node@8", link: true
@@ -78,3 +79,4 @@ cask "vagrant"
 cask "virtualbox"
 cask "visual-studio"
 cask "visual-studio-code"
+mas "Microsoft Remote Desktop", id: 1295203466
