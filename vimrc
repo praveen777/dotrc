@@ -1,7 +1,7 @@
 "Go to iTerm settings -> Profiles -> Text and make sure you have selected any
 "power line font for Non-ASCII Font, for example I've chosen "Source Code Pro
 "Medium".
-"git clone git@github.com:powerline/fonts.git
+"git clone https://github.com/powerline/fonts.git
 "cd fontd
 "./install.sh
 
