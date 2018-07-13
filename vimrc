@@ -15,7 +15,7 @@ call plug#begin()
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
-Plug 'YankRing.vim'
+Plug 'vim-scripts/YankRing.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'avakhov/vim-yaml'
@@ -30,6 +30,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/molokai'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -42,6 +43,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'leshill/vim-json'
+Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
@@ -191,7 +193,7 @@ endfunction
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 
-
+nmap <leader>T :TagbarToggle<CR>
 
 set timeout timeoutlen=1000 ttimeoutlen=10
 "let g:pymode_rope = 0
