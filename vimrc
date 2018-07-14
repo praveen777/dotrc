@@ -117,7 +117,7 @@ set laststatus=2
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
+imap <c-x>w <plug>(fzf-complete-word)
 map <c-o> :FZF<CR>
 map <c-r> :CtrlPMRUFiles<CR>
 map <leader>pp :setlocal paste!<cr>
@@ -131,8 +131,9 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>h <Plug>(easymotion-linebackward)
-map <leader>n <Plug>(easymotion-next)
-map <leader>N <Plug>(easymotion-prev)
+map <leader>n <Plug>(easymotion-vim-n)
+map <leader>N <Plug>(easymotion-vim-N)
+map <leader>w <Plug>(easymotion-bd-w)
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -200,3 +201,32 @@ set timeout timeoutlen=1000 ttimeoutlen=10
 let g:go_version_warning = 0
 let g:rehash256 = 1
 let g:molokai_original = 1
+
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
