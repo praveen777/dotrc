@@ -43,7 +43,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'leshill/vim-json'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
@@ -117,12 +119,13 @@ set laststatus=2
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-imap <c-x>w <plug>(fzf-complete-word)
+imap <c-x><c-w> <plug>(fzf-complete-word)
 map <c-o> :FZF<CR>
-map <c-r> :CtrlPMRUFiles<CR>
+map <c-r> :CtrlPMRUFiles<cr>
 map <leader>pp :setlocal paste!<cr>
 map <leader>z :Goyo<cr>
 map <leader>g :Ack 
+map <leader>c :TCommentBlock<cr>
 
 map <leader>/ <Plug>(incsearch-easymotion-/)
 map <leader>? <Plug>(incsearch-easymotion-?)
@@ -193,7 +196,6 @@ endfunction
 
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
-
 nmap <leader>T :TagbarToggle<CR>
 
 set timeout timeoutlen=1000 ttimeoutlen=10
@@ -230,3 +232,17 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+
+  let g:multi_cursor_use_default_mapping=0
+
+    " Default mapping
+    let g:multi_cursor_start_word_key      = '<C-n>'
+"    let g:multi_cursor_select_all_word_key = '<C-N>'
+    let g:multi_cursor_start_key           = 'g<C-n>'
+    let g:multi_cursor_select_all_key      = 'g<C-N>'
+    let g:multi_cursor_next_key            = '<C-n>'
+    let g:multi_cursor_prev_key            = '<C-p>'
+    let g:multi_cursor_skip_key            = '<C-x>'
+    let g:multi_cursor_quit_key            = '<Esc>'
+    
