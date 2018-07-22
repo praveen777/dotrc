@@ -76,6 +76,8 @@ filetype plugin indent on
 
 let mapleader = ","
 
+au FileType php nmap <Leader>ds <esc><C-w>]
+
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
