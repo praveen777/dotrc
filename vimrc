@@ -24,6 +24,8 @@ Plug 'c9s/treemenu.vim'
 Plug 'c9s/vikube.vim'
 Plug 'corylanou/vim-present', {'for' : 'present'}
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/chrisbra/csv.vim.git'
+Plug 'https://github.com/plytophogy/vim-virtualenv.git'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'easymotion/vim-easymotion'
 Plug 'ekalinin/Dockerfile.vim'
@@ -100,7 +102,7 @@ set updatetime=100
 let g:go_auto_sameids = 1
 
 set hlsearch
-
+let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
 let g:UltiSnipsExpandTrigger="<Leader>"
 let g:UltiSnipsListSnippets="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -140,10 +142,6 @@ map <leader>n <Plug>(easymotion-vim-n)
 map <leader>N <Plug>(easymotion-vim-N)
 map <leader>w <Plug>(easymotion-bd-w)
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 
 
@@ -181,7 +179,6 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
 
-colorscheme molokai
 
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
