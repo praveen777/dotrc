@@ -1,0 +1,35 @@
+snippet main "main ... (exit)"
+#!/bin/bash
+set -eu
+set -o pipefail
+
+cleanup() {
+  log "Exiting"
+}
+
+trap cleanup SIGINT EXIT SIGHUP
+
+update_time() {
+  NOW=$(date +"%m-%d-%Y %H:%M:%S")
+}
+
+die() {
+  update_time
+  echo "${NOW}:DIED: $@" >&2 
+  exit 1
+}
+
+log() {
+  update_time
+  echo "${NOW}:INFO: $@"
+}
+
+main() {
+  log "my first script"
+}
+
+main
+
+endsnippet
+
+
