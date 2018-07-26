@@ -15,7 +15,7 @@ update_time() {
 
 die() {
   update_time
-  echo "${NOW}:DIED: $@" >&2 
+  echo  "${NOW}":$'\e[31mDIED\e[0m'": $@"  >&2
   exit 1
 }
 
@@ -42,6 +42,7 @@ main() {
   done
   shift $((OPTIND -1))
   log "main script"
+  die "boom"
 }
 
 main $@
