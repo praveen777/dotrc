@@ -24,11 +24,27 @@ log() {
   echo "${NOW}:INFO: $@"
 }
 
-main() {
-  log "my first script"
+usage() {
+  echo
 }
 
-main
+main() {
+  while getopts ":h" opt; do
+    case ${opt} in
+      h )
+        usage
+       ;;
+      \? )
+        echo "Invalid Option: -$OPTARG" 1>&2
+        exit 1
+        ;;
+    esac
+  done
+  shift $((OPTIND -1))
+  log "main script"
+}
+
+main $@
 
 endsnippet
 
