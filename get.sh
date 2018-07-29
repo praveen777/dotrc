@@ -15,23 +15,23 @@ update_time() {
 die() {
   update_time
   if [ -t 0 ] ; then
-    echo  "${NOW}":$'\e[31mDIED\e[0m'": $@"  >&2
+    echo  "${NOW}":$'\e[31mDIED\e[0m'": $*"  >&2
   else
-    echo  "${NOW}:DIED: $@"  >&2
+    echo  "${NOW}:DIED: $*"  >&2
   fi
   exit 1
 }
 
 log() {
   update_time
-  echo "${NOW}:INFO: $@"
+  echo "${NOW}:INFO: $*"
 }
 
 usage() {
   echo
 }
 
-install_dotrc() {
+install_vimrc() {
 	if [ -d ~/dotrc ]; then
       mv ~/dotrc ~/dotrc.old
 	  log "backed up ~/dotrc to ~/dotrc.old"
@@ -69,9 +69,9 @@ main() {
     esac
   done
   shift $((OPTIND -1))
-  install_dotrc
+  install_vimrc
 }
 
-main $@
+main "$@"
 
 
