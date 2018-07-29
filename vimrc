@@ -50,7 +50,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python2 generate.py' }
+Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python generate.py' }
 Plug 'python-mode/python-mode'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdtree'

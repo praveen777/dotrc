@@ -32,28 +32,30 @@ usage() {
 }
 
 install_vimrc() {
-	if [ -d ~/dotrc ]; then
+    if [ -d ~/dotrc ]; then
+      rm -rf ~/dotrc.old
       mv ~/dotrc ~/dotrc.old
-	  log "backed up ~/dotrc to ~/dotrc.old"
+      log "backed up ~/dotrc to ~/dotrc.old"
     fi
-	git clone https://github.com/lrfurtado/dotrc.git ~/dotrc 
-	if [ -f ~/.vimrc ]; then
+    git clone https://github.com/lrfurtado/dotrc.git ~/dotrc 
+    if [ -f ~/.vimrc ]; then
       mv ~/.vimrc ~/.vimrc.old
-	  log "backed up ~/.vimrc to ~/.vimrc.old"
+      log "backed up ~/.vimrc to ~/.vimrc.old"
     fi
-	if [ -d ~/.vim ]; then
-	  mv ~/.vim ~/.vim.old
-	  log "backed up ~/.vim to ~/.vim.old"
+    if [ -d ~/.vim ]; then
+      rm -rf ~/.vim.old
+      mv ~/.vim ~/.vim.old
+      log "backed up ~/.vim to ~/.vim.old"
     fi
 
-	ln -s ~/dotrc/vimrc ~/.vimrc
-	mkdir ~/.vim
-	ln -s ~/dotrc/MyUltiSnips ~/.vim/MyUltiSnips
-	log "installed vim files "
-
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/0.8.0/plug.vim
-
-	vim -c ":PlugInstall | q | q"
+    ln -s ~/dotrc/vimrc ~/.vimrc
+    mkdir ~/.vim
+    ln -s ~/dotrc/MyUltiSnips ~/.vim/MyUltiSnips
+    log "installed vim files "
+    
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/0.8.0/plug.vim
+    
+    vim -c ":PlugInstall | q | q"
 }
 
 main() {
