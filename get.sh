@@ -19,6 +19,9 @@ die() {
   else
     echo  "${NOW}:DIED: $*"  >&2
   fi
+  echo . >&2
+  echo . >&2
+  echo . >&2
   exit 1
 }
 

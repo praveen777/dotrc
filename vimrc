@@ -14,7 +14,7 @@ call plug#begin()
 " Initialize plugin system
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Raimondi/delimitMate'
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips' , { 'tag': '3.1' }
 Plug 'vim-scripts/YankRing.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewstuart/vim-kubernetes'
