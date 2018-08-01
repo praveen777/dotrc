@@ -103,7 +103,7 @@ let g:go_auto_sameids = 1
 
 set hlsearch
 let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
-let g:UltiSnipsExpandTrigger="<Leader>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
