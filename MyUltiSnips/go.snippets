@@ -1,0 +1,56 @@
+
+snippet mainAST "sam code to use the GO AST"
+
+package main
+
+// https://github.com/fatih/astrewrite
+import (
+	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
+
+	"github.com/davecgh/go-spew/spew"
+)
+
+func main() {
+	fset := token.NewFileSet()
+
+	src := `package foo
+
+import (
+	"fmt"
+	"time"
+)
+// processes input and retuns bar
+func foo(a int) string {
+   return "LUCIANO"
+}
+
+func bar() {
+	_ := func() {
+	}
+	fmt.Println(time.Now())
+}`
+
+	f, err := parser.ParseFile(fset, "", src, parser.AllErrors)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	for _, d := range f.Decls {
+		switch v := d.(type) {
+		case *ast.FuncDecl:
+			fmt.Println(v.Name.Name)
+
+			spew.Dump(v.Type)
+
+		case *ast.GenDecl:
+		default:
+
+		}
+
+
+endsnippet
+
