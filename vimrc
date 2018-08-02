@@ -109,7 +109,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-au FileType text nmap <leader>s <Esc>:DIstart<CR> 
+au FileType text nmap <leader>s <Esc>:DIstart S<CR> 
 au FileType text nmap <leader>S <Esc>:DIstop<CR>
 
 
@@ -151,7 +151,7 @@ set ts=4
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
 
-nnoremap <silent> ,p :YRShow<CR>
+nnoremap <silent> <leader>p :YRShow<CR>
 
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
