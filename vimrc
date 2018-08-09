@@ -63,6 +63,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
 call plug#end()
 let vim_markdown_preview_github=1
 
@@ -244,4 +245,4 @@ let g:tagbar_type_go = {
     let g:multi_cursor_prev_key            = '<C-p>'
     let g:multi_cursor_skip_key            = '<C-x>'
     let g:multi_cursor_quit_key            = '<Esc>'
-    
+   let g:terraform_completion_keys = 1 
