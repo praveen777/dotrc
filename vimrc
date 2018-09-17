@@ -51,7 +51,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; python generate.py' }
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
@@ -64,6 +64,9 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
+Plug 'previm/previm'
+Plug 'terryma/vim-expand-region'
+Plug 'python-rope/ropevim'
 call plug#end()
 let vim_markdown_preview_github=1
 
@@ -73,7 +76,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
-
+let g:pymode_lint_on_write = 0
 syntax on
 filetype plugin indent on
 
@@ -95,7 +98,8 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 let g:pymode_run_bind = "<C-S-e>"
 au FileType python nmap <leader>ds <C-c>g
 au FileType python nmap <leader>r <C-S-e>
-
+let g:pymode_rope_goto_definition_bind = '<leader>ds'
+let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:go_fmt_command = "goimports"
 let g:go_def_mode = 'guru'
 let g:go_auto_type_info = 1
