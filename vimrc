@@ -250,3 +250,5 @@ let g:tagbar_type_go = {
     let g:multi_cursor_skip_key            = '<C-x>'
     let g:multi_cursor_quit_key            = '<Esc>'
    let g:terraform_completion_keys = 1 
+
+set showcmd
