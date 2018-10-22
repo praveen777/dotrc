@@ -18,6 +18,8 @@ Plug 'SirVer/ultisnips' , { 'tag': '3.1' }
 Plug 'vim-scripts/YankRing.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewstuart/vim-kubernetes'
+Plug 'sickill/vim-pasta'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'avakhov/vim-yaml'
 Plug 'c9s/helper.vim'
 Plug 'c9s/treemenu.vim'
