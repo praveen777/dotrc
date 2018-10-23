@@ -135,7 +135,7 @@ map <c-o> :FZF<CR>
 map <c-r> :CtrlPMRUFiles<cr>
 map <leader>pp :setlocal paste!<cr>
 map <leader>z :Goyo<cr>
-map <leader>g :Ack 
+map <leader>g :Ag<space>
 map <leader>c :TCommentBlock<cr>
 
 map <leader>/ <Plug>(incsearch-easymotion-/)
